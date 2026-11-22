@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#171717">
+
+    <title>Nasgor & Geprek | Makanan Enak</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <span class="logo-icon">🍳</span>
+            Nasgor<span class="accent">&Geprek</span>
+        </a>
+
+        <div class="nav-right">
+            <a href="#menu" class="nav-link">Menu</a>
+
+            <button class="cart-button" id="cart-button">
+                🛒
+                <span>Keranjang</span>
+                <span class="cart-count" id="cart-count">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="hero-label">ENAK • MURAH • MENGENYANGKAN</span>
+
+            <h1>
+                Nikmatnya Makan<br>
+                <span>Tanpa Batas.</span>
+            </h1>
+
+            <p>
+                Nikmati nasi goreng spesial dan ayam geprek
+                dengan cita rasa yang bikin ketagihan.
+            </p>
+
+            <a href="#menu" class="primary-button">
+                Lihat Menu <span>→</span>
+            </a>
+        </div>
+
+        <div class="hero-image">
+            <div class="hero-circle"></div>
+
+            <div class="hero-food">
+                <img src="image/ayamgeprek.jpg" alt="Ayam geprek">
+            </div>
+
+            <span class="floating-label">Fresh & Delicious</span>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- MENU -->
+        <section class="menu-section" id="menu">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">PILIHAN FAVORIT</span>
+                    <h2>Menu Kami</h2>
+                </div>
+
+                <p>Dibuat dengan bahan berkualitas dan rasa terbaik.</p>
+            </div>
+
+            <div class="menu-grid" id="menu-list"></div>
+        </section>
+
+        <!-- CART -->
+        <section class="cart-section" id="cart-section">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">PESANAN KAMU</span>
+                    <h2>Keranjang</h2>
+                </div>
+            </div>
+
+            <div id="cart-list" class="cart-list">
+                <div class="empty-cart">
+                    <span>🛒</span>
+                    <p>Keranjang masih kosong</p>
+                    <small>Yuk, pilih menu favoritmu!</small>
+                </div>
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Subtotal</span>
+                    <strong id="cart-total">Rp0</strong>
+                </div>
+
+                <button class="checkout-button" id="checkout-button">
+                    Checkout Sekarang →
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+
+            <button class="close-button" id="close-modal">×</button>
+
+            <span class="section-label">SELESAIKAN PESANAN</span>
+            <h2>Checkout</h2>
+
+            <p class="modal-description">
+                Lengkapi informasi pesanan kamu.
+            </p>
+
+            <form id="checkout-form">
+
+                <!-- NAMA -->
+                <div class="form-group">
+                    <label for="customer-name">Nama pelanggan</label>
+
+                    <input
+                        type="text"
+                        id="customer-name"
+                        placeholder="Masukkan nama kamu"
+                        required
+                    >
+                </div>
+
+                <!-- JENIS PESANAN -->
+                <div class="form-group">
+                    <label for="order-type">Jenis pesanan</label>
+
+                    <select id="order-type">
+                        <option value="Dine In">Dine In</option>
+                        <option value="Pick Up">Pick Up</option>
+                        <option value="Delivery">Delivery</option>
+                    </select>
+                </div>
+
+                <!-- ALAMAT DELIVERY -->
+                <div class="form-group" id="address-group" hidden>
+                    <label for="customer-address">Alamat pengiriman</label>
+
+                    <textarea
+                        id="customer-address"
+                        placeholder="Masukkan alamat lengkap"
+                    ></textarea>
+                </div>
+
+                <!-- CATATAN -->
+                <div class="form-group">
+                    <label for="customer-note">Catatan pesanan</label>
+
+                    <textarea
+                        id="customer-note"
+                        placeholder="Contoh: Tidak pedas, sambal dipisah"
+                    ></textarea>
+                </div>
+
+                <!-- PEMBAYARAN -->
+                <div class="form-group">
+                    <label for="payment-method">Metode pembayaran</label>
+
+                    <select id="payment-method">
+                        <option value="QRIS">QRIS</option>
+                        <option value="Cash">Cash</option>
+                    </select>
+                </div>
+
+                <!-- QRIS -->
+                <div class="qris-section" id="qris-section">
+                    <h3>Pembayaran QRIS</h3>
+
+                    <img
+                        src="image/qris.jpg"
+                        alt="QRIS pembayaran"
+                        class="qris-image"
+                    >
+
+                    <p>Scan QRIS di atas untuk melakukan pembayaran.</p>
+
+                    <div class="payment-instruction">
+                        <strong>📸 Konfirmasi Pembayaran</strong>
+
+                        <p>
+                            Setelah melakukan pembayaran, silakan kirimkan
+                            bukti transfer secara manual melalui WhatsApp
+                            kepada admin.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- RINCIAN HARGA -->
+                <div class="price-details">
+
+                    <div>
+                        <span>Subtotal</span>
+                        <strong id="subtotal">Rp0</strong>
+                    </div>
+
+                    <div>
+                        <span>Ongkir</span>
+                        <strong id="delivery-fee">Rp0</strong>
+                    </div>
+
+                    <div class="final-total">
+                        <span>Total pembayaran</span>
+                        <strong id="final-total">Rp0</strong>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="submit-button">
+                    Pesan via WhatsApp →
+                </button>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast">
+        Berhasil ditambahkan ke keranjang!
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
