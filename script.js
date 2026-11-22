@@ -26,7 +26,7 @@ const menus = [
         description: "Nasi goreng dengan ayam geprek.",
         price: 18000,
         emoji: "🍳",
-        image: "image/nasgorprek.jpg"
+        image: "image/nasgorspecial.jpg"
     },
     {
         id: 3,
