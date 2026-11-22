@@ -22,11 +22,11 @@ const menus = [
     },
     {
         id: 2,
-        name: "Nasi Goreng Spesial",
-        description: "Nasi goreng dengan topping spesial.",
+        name: "Nasi Gorprek",
+        description: "Nasi goreng dengan ayam geprek.",
         price: 18000,
         emoji: "🍳",
-        image: "image/nasgorspecial.jpg"
+        image: "image/nasgorsprek.jpg"
     },
     {
         id: 3,
